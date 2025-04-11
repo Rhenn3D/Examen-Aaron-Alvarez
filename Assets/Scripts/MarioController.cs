@@ -8,12 +8,17 @@ public class MarioController : MonoBehaviour
     private float inputHorizontal;
     public float playerSpeed = 4;
     public float jumpForce = 15;
+    public GroundSensor groundSensor;
+    public bool isGrounded;
+    
     
 
     
     void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        groundSensor = FindObjectOfType<GroundSensor>();
+        isGrounded = GetComponentInChildren<GroundSensor>();
     }
 
     void FixedUpdate()

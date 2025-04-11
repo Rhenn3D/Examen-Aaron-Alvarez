@@ -4912,7 +4912,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 4
   jumpForce: 15
-  groundSensor: {fileID: 0}
+  groundSensor: {fileID: 1342493346}
+  isGrounded: 0
 --- !u!61 &662471938
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10618,6 +10619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
+  groundSensor: {fileID: 0}
 --- !u!1 &1348504962
 GameObject:
   m_ObjectHideFlags: 0
