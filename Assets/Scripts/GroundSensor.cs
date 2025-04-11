@@ -7,16 +7,7 @@ public class GroundSensor : MonoBehaviour
     public bool isGrounded = false;
     public GroundSensor groundSensor;
     
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
@@ -25,5 +16,13 @@ public class GroundSensor : MonoBehaviour
             isGrounded = true;
         }
         
+    }
+
+    public void OnTriggerExit2D(Collider2D collider)
+    {
+      if(collider.gameObject.layer == 3)
+        {
+            isGrounded = false;
+        }
     }
 }

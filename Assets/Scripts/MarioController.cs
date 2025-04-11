@@ -9,7 +9,7 @@ public class MarioController : MonoBehaviour
     public float playerSpeed = 4;
     public float jumpForce = 15;
     public GroundSensor groundSensor;
-    public bool isGrounded;
+  
     
     
 
@@ -18,7 +18,7 @@ public class MarioController : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         groundSensor = FindObjectOfType<GroundSensor>();
-        isGrounded = GetComponentInChildren<GroundSensor>();
+        groundSensor = GetComponentInChildren<GroundSensor>();
     }
 
     void FixedUpdate()
@@ -32,7 +32,7 @@ public class MarioController : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetButtonDown("Jump")) //Se que me falta el && isGrounded y el GetComponentInChildren pero no sabia como ponerlo
+        if(Input.GetButtonDown("Jump") && groundSensor.isGrounded) //Se que me falta el && isGrounded y el GetComponentInChildren pero no sabia como ponerlo
         {
             Jump();
         }
